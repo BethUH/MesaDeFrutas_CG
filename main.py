@@ -4,8 +4,7 @@ from OpenGL.GLU import *
 import pygame
 
 from pygame.locals import *
-from MeshRenderer import MacaMesh
-import maca_constants
+from MeshRenderer import MacaMesh, BananaMesh, MamaoMesh
 
 def main():
     pygame.init()
@@ -43,7 +42,9 @@ while True:
 
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
-    MacaMesh()
+    #MacaMesh()
+    #BananaMesh()
+    MamaoMesh()
     
     pygame.display.flip()
     pygame.time.wait(10)
