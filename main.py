@@ -3,7 +3,7 @@ from OpenGL.GLU import *
 
 import pygame
 
-from pygame.locals import *
+from pygame.locals import * 
 from MeshRenderer import MacaMesh, BananaMesh, MamaoMesh, MelanciaMesh, LaranjaMesh, MesaMesh
 
 def main():
