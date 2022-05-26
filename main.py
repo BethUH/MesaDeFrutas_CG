@@ -4,7 +4,7 @@ from OpenGL.GLU import *
 import pygame
 
 from pygame.locals import *
-from MeshRenderer import MacaMesh, BananaMesh, MamaoMesh, MelanciaMesh, LaranjaMesh
+from MeshRenderer import MacaMesh, BananaMesh, MamaoMesh, MelanciaMesh, LaranjaMesh, MesaMesh
 
 def main():
     pygame.init()
@@ -46,7 +46,8 @@ while True:
     #BananaMesh()
     #MamaoMesh()
     #MelanciaMesh()
-    LaranjaMesh()
+    #LaranjaMesh()
+    MesaMesh()
     
     pygame.display.flip()
     pygame.time.wait(10)
