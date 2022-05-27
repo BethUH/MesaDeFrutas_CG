@@ -7,7 +7,7 @@ import melancia_constants
 import laranja_constants
 import mesa_constants 
 import color_constants
-
+import textura
 
 def MacaMesh():
 
@@ -114,6 +114,14 @@ def MelanciaMesh():
     glEnd()
     
 def LaranjaMesh():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    texture_id = textura.read_texture('texturas/laranja.jpg')
+    glEnable(GL_TEXTURE_2D)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glEnable(GL_TEXTURE_GEN_S)
+    glEnable(GL_TEXTURE_GEN_T)
+    glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
+    glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
 
     for face in laranja_constants.faces:
         if(len(face) == 3):
@@ -121,7 +129,7 @@ def LaranjaMesh():
             x = 0
             for vertex in face:
                 x += 1
-                glColor3fv(color_constants.colors[1])
+                #glColor3fv(color_constants.colors[1])
                 glVertex3fv(laranja_constants.vertices[vertex])
             glEnd()
         if(len(face) == 4):
@@ -129,7 +137,7 @@ def LaranjaMesh():
             x = 0
             for vertex in face:
                 x += 1
-                glColor3fv(color_constants.colors[x])
+                #glColor3fv(color_constants.colors[x])
                 glVertex3fv(laranja_constants.vertices[vertex])
             glEnd()
 
