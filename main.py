@@ -6,6 +6,8 @@ import pygame
 from pygame.locals import * 
 from MeshRenderer import MacaMesh, BananaMesh, MamaoMesh, MelanciaMesh, LaranjaMesh, MesaMesh
 
+fruta = 0
+
 def main():
     pygame.init()
     display = (720, 720)
@@ -22,6 +24,8 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
+    
+    frutas = [MacaMesh(), BananaMesh(), MamaoMesh(), MelanciaMesh(), LaranjaMesh()]
             
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_LEFT:
@@ -29,9 +33,12 @@ while True:
         if event.key == pygame.K_RIGHT:
             glTranslatef(1,0,0)
         if event.key == pygame.K_UP:
-            glTranslatef(0,1,0)
+            fruta -= 1
         if event.key == pygame.K_DOWN:
-            glTranslatef(0,-1,0)
+            fruta += 1
+        if event.key == pygame.K_f:
+            fruta += 1
+            
     if event.type == MOUSEWHEEL:
         if event.y > 0:
             glTranslatef(0,0,0.5)
@@ -42,12 +49,19 @@ while True:
 
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT)
 
-    #MacaMesh()
-    #BananaMesh()
-    #MamaoMesh()
-    #MelanciaMesh()
-    #LaranjaMesh()
-    MesaMesh()
+    glPushMatrix()
+    if (fruta%len(frutas) == 0):
+        MacaMesh()
+    if (fruta%len(frutas) == 1):
+        BananaMesh()
+    if (fruta%len(frutas) == 2):
+        MamaoMesh()
+    if (fruta%len(frutas) == 3):
+        MelanciaMesh()
+    if (fruta%len(frutas) == 4):
+        LaranjaMesh()
+    glPopMatrix()
+        
     
     pygame.display.flip()
     pygame.time.wait(10)
