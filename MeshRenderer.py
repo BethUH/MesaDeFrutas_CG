@@ -10,6 +10,14 @@ import color_constants
 import textura
 
 def MacaMesh():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    texture_id = textura.read_texture('texturas/maca.jpg')
+    glEnable(GL_TEXTURE_2D)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glEnable(GL_TEXTURE_GEN_S)
+    glEnable(GL_TEXTURE_GEN_T)
+    glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
+    glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
 
     for face in maca_constants.faces:
         if(len(face) == 3):
@@ -17,7 +25,7 @@ def MacaMesh():
             x = 0
             for vertex in face:
                 x += 1
-                glColor3fv(color_constants.colors[1])
+                #glColor3fv(color_constants.colors[1])
                 glVertex3fv(maca_constants.vertices[vertex])
             glEnd()
         if(len(face) == 4):
@@ -25,7 +33,7 @@ def MacaMesh():
             x = 0
             for vertex in face:
                 x += 1
-                glColor3fv(color_constants.colors[x])
+                #glColor3fv(color_constants.colors[x])
                 glVertex3fv(maca_constants.vertices[vertex])
             glEnd()
 
@@ -34,8 +42,18 @@ def MacaMesh():
         for vertex in edge:
             glVertex3fv(maca_constants.vertices[vertex])
     glEnd() 
+
+    glDisable(GL_TEXTURE_2D)
     
 def BananaMesh():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    texture_id = textura.read_texture('texturas/banana.jpg')
+    glEnable(GL_TEXTURE_2D)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glEnable(GL_TEXTURE_GEN_S)
+    glEnable(GL_TEXTURE_GEN_T)
+    glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
+    glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
 
     for face in banana_constants.faces:
         if(len(face) == 3):
@@ -60,8 +78,18 @@ def BananaMesh():
         for vertex in edge:
             glVertex3fv(banana_constants.vertices[vertex])
     glEnd() 
+
+    glDisable(GL_TEXTURE_2D)
     
 def MamaoMesh():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    texture_id = textura.read_texture('texturas/mamao.jpg')
+    glEnable(GL_TEXTURE_2D)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glEnable(GL_TEXTURE_GEN_S)
+    glEnable(GL_TEXTURE_GEN_T)
+    glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
+    glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
 
     for face in mamao_constants.faces:
         if(len(face) == 3):
@@ -86,8 +114,18 @@ def MamaoMesh():
         for vertex in edge:
             glVertex3fv(mamao_constants.vertices[vertex])
     glEnd()
+
+    glDisable(GL_TEXTURE_2D)
     
 def MelanciaMesh():
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+    texture_id = textura.read_texture('texturas/melancia.jpg')
+    glEnable(GL_TEXTURE_2D)
+    glBindTexture(GL_TEXTURE_2D, texture_id)
+    glEnable(GL_TEXTURE_GEN_S)
+    glEnable(GL_TEXTURE_GEN_T)
+    glTexGeni(GL_S, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
+    glTexGeni(GL_T, GL_TEXTURE_GEN_MODE, GL_SPHERE_MAP)
 
     for face in melancia_constants.faces:
         if(len(face) == 3):
@@ -112,6 +150,8 @@ def MelanciaMesh():
         for vertex in edge:
             glVertex3fv(melancia_constants.vertices[vertex])
     glEnd()
+
+    glDisable(GL_TEXTURE_2D)
     
 def LaranjaMesh():
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
@@ -146,6 +186,8 @@ def LaranjaMesh():
         for vertex in edge:
             glVertex3fv(laranja_constants.vertices[vertex])
     glEnd()
+
+    glDisable(GL_TEXTURE_2D)
     
 def MesaMesh():
 

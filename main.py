@@ -18,7 +18,8 @@ def main():
     glTranslatef(0.0, 0.0, -300)
     glRotatef(-90, 2, 0, 0)
     
-
+    global frutas
+    frutas = [MacaMesh(), BananaMesh(), MamaoMesh(), MelanciaMesh(), LaranjaMesh()]
 
 
 main()
@@ -28,8 +29,6 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
             quit()
-    
-    frutas = [MacaMesh(), BananaMesh(), MamaoMesh(), MelanciaMesh(), LaranjaMesh()]
             
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_KP4:
