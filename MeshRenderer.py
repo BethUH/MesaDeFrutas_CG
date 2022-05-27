@@ -144,15 +144,15 @@ def MesaMesh():
     for face in mesa_constants.faces:
         if(len(face) == 3):
             glBegin(GL_TRIANGLES)
-            x = 0
+            x = 3
             for vertex in face:
                 x += 1
-                glColor3fv(color_constants.colors[1])
+                glColor3fv(color_constants.colors[x])
                 glVertex3fv(mesa_constants.vertices[vertex])
             glEnd()
         if(len(face) == 4):
             glBegin(GL_QUADS)
-            x = 0
+            x = 3
             for vertex in face:
                 x += 1
                 glColor3fv(color_constants.colors[x])
